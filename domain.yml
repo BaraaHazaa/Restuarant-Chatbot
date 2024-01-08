@@ -1,0 +1,91 @@
+intents:
+  - greet
+  - make_order
+  - goodbye
+  - affirm
+  - happy
+  - deny
+  - bot_challenge
+  - quantity_order
+
+entities:
+  - food_item
+  - quantity
+
+slots:
+  items:
+    type: list
+    mappings:
+      - type: from_entity
+        entity: food_item
+        role: name
+      - type: from_entity
+        entity: quantity
+        role: quantity
+
+  food_item:
+    type: categorical
+    mappings:
+      - type: from_entity
+        entity: food_item
+
+  quantity:
+    type: categorical
+    mappings:
+      - type: from_entity
+        entity: quantity
+
+actions:
+  - utter_happy
+  - utter_did_that_help
+  - utter_default
+  - utter_sad
+  - utter_greet
+  - utter_goodbye
+  - utter_iamabot
+  - utter_ask_item
+  - utter_ask_quantity
+  - utter_confirm_order
+  - utter_ask_change
+  - action_confirm_multiple_items
+
+
+responses:
+  utter_greet:
+    - text: "Hello! welcome to our restaurant!"
+
+  utter_happy:
+    - text: "Great! would you like anything else?"
+    - text: "That's nice to hear, would you like?"
+
+  utter_sad:
+    - text: "I'm sorry I can't help you"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_default:
+    - text: "I'm sorry, I didn't understand. Can you please repeat that?"
+    
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_ask_change:
+    - text: "Do you want to change your order?"
+    
+  utter_ask_item:
+    - text: "What would you like to order?"
+
+  utter_ask_quantity:
+    - text: "How many {food_item} would you like?"
+
+  utter_confirm_order:
+    - text: "Sure, I've added {quantity} {food_item} to your order."
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

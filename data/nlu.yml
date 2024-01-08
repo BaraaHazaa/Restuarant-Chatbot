@@ -1,0 +1,146 @@
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - sup
+      - whats up
+      - what's up
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - greetings 
+      - salutations
+      - salute
+
+  - intent: make_order
+    examples: |
+      - can i order?
+      - i wanna order
+      - wanna order
+      - i gonna order 
+      - im going to order now
+      - i want to order
+      - ordering?
+      - order
+      - please can i order?
+      - order please
+      - ordering
+      - i want to order right now
+      - im hungry
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: happy
+    examples: |
+     - wonderful
+     - great
+     - amazing
+     - im so happy with that
+     - woohoo!
+     - thanks
+     - thank you
+     - thank you very much
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  - intent: quantity_order
+    examples: |
+      - I want [2](quantity) [burgers](food_item)
+      - Can I please order [four](quantity) [pasta](food_item) dishes?
+      - I wanna eat [nine](quantity) [pizzas](food_item) please
+      - Get me [3](quantity) [tacos](food_item)
+      - Order me [six](quantity) [sandwiches](food_item)
+      - [5](quantity)
+      - [five](quantity)
+      - [seven](quantity
+      - I want [nine](quantity) [burgers](food_item) and [two](quantity) [pizzas](food_item) and [5](quantity) [tacos](food_item)
+      - Get me [2](quantity) [pizzas](food_item) and [seven](quantity) [burgers](food_item)
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+
+entities:
+  - food_item:
+      examples:
+        - pizza
+        - burger
+        - tacos
+        - pasta
+        - sandwich
+        - chicken
+
+  - quantity:
+      examples:
+        - one
+        - two
+        - three
+        - four
+        - five
+        - six 
+        - seven
+        - eight
+        - nine
+        - ten
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6 
+        - 7 
+        - 8 
+        - 9
+        - 10

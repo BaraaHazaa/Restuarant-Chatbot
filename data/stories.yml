@@ -1,0 +1,61 @@
+stories:
+- story: User starts ordering
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: make_order
+  - action: utter_ask_item
+
+- story: User specifies the food item
+  steps:
+  - intent: quantity_order
+    entities:
+    - food_item: "pizza"
+  - action: utter_ask_quantity
+
+- story: Order with multiple items
+  steps:
+  - intent: make_order
+  - action: utter_ask_item
+  - intent: quantity_order
+    entities:
+    - quantity: "2"
+    - food_item: "burgers"
+  - action: utter_ask_quantity
+  - intent: quantity_order
+    entities:
+    - quantity: "2"
+    - food_item: "pizzas"
+  - action: utter_ask_quantity
+  - intent: quantity_order
+    entities:
+    - quantity: "5"
+    - food_item: "tacos"
+  - action: action_confirm_multiple_items
+
+
+
+- story: User specifies the quantity
+  steps:
+  - intent: quantity_order
+    entities:
+    - quantity: "two"
+  - action: utter_confirm_order
+
+- story: User changes their mind about the order
+  steps:
+  - action: utter_ask_change
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Bot asks for quantity after asking for a change
+  steps:
+  - action: utter_ask_change
+  - intent: affirm
+  - action: utter_ask_quantity
+
+- story: User changes their mind and denies the order after asking for a change
+  steps:
+  - action: utter_ask_change
+  - intent: deny
+  - action: utter_goodbye
